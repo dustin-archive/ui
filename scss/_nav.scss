@@ -1,0 +1,91 @@
+.nav {
+  @extend %transition;
+  flex: 0;
+  min-width: 3em;
+  // min-height: 3em;
+  max-width: calc(50vh - #{$nav-width});
+  background: rgba($black, 0.6);
+
+  @media (min-width: 80em) {
+    flex: 1;
+  }
+
+  // &.-top    { .nav-border { top:    0; } }
+  &.-right  { .nav-border { right:  0; } }
+  // &.-bottom { .nav-border { bottom: 0; } }
+  &.-left   { .nav-border { left:   0; } }
+
+  &.-left  { .nav-tip { left:  calc(100% + 1em); } }
+  &.-right { .nav-tip { right: calc(100% + 1em); } }
+
+  &.-left  { .nav-tip::before { left:  -0.25em; } }
+  &.-right { .nav-tip::before { right: -0.25em; } }
+}
+
+.nav-item {
+  padding: 1em 0 1em 3em;
+  cursor: pointer;
+
+  &:hover,
+  &.-open {
+    .nav-border {
+      width: 100%;
+    }
+  }
+
+  &:hover .nav-tip {
+    opacity: 1;
+  }
+}
+
+.nav-border {
+  @extend %transition;
+  position: absolute;
+  top: 0; bottom: 0;
+  width: 0;
+  background: $orange;
+}
+
+.nav-icon {
+  position: absolute;
+  top: 0.5em;
+  left: 0.5em;
+  width: 2em;
+  height: 2em;
+  background-image: url('../logo-beta.svg');
+  // background-color: blue;
+  // background-size: calc(100% - #{$nav-width / 2});
+}
+
+.nav-text {
+  @extend %ellipsis;
+  @extend %transition;
+  opacity: 0;
+
+  @media (min-width: 80em) {
+    opacity: 1;
+  }
+}
+
+.nav-tip {
+  @extend %transition;
+  position: absolute;
+  top: 0.5em;
+  line-height: 1em;
+  padding: 0.5em;
+  background: $orange;
+  z-index: 1;
+  opacity: 0;
+
+  &::before {
+    position: absolute;
+    top: 0.625em;
+    display: block;
+    width: 0.75em;
+    height: 0.75em;
+    transform: rotate(45deg);
+    background: $orange;
+    content: '';
+    z-index: -1;
+  }
+}

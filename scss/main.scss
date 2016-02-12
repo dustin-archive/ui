@@ -1,0 +1,25 @@
+@import '../../_sass/color-sass/scss/main';
+
+* {
+  position: relative;
+  box-sizing: border-box;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+body {
+  margin: 0;
+  color: $white;
+  font-family: 'HelveticaNeue-CondensedBold';
+  line-height: 1em;
+}
+
+@import 'variables';
+@import 'placeholders';
+@import 'layout';
+@import 'nav';
+@import 'queue';
+@import 'album';
+@import 'chat';
+@import 'track';

@@ -1,0 +1,30 @@
+.tab {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  border-radius: 0.125em 0.125em 0 0;
+  margin: 0 0.125em;
+
+  &:not(.-root) {
+    padding: 1em;
+    background: rgba($black, 0.2);
+  }
+
+  &.-root {
+    flex-direction: row;
+  }
+
+  &.-new {
+    max-width: 1em;
+  }
+
+  &.-active {
+    background: rgba($black, 0.4);
+  }
+
+  &-border {
+    height: 0.25em;
+    border-radius: 0.125em;
+    background: $orange;
+  }
+}

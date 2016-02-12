@@ -1,0 +1,9 @@
+%ellipsis {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+%transition {
+  transition: all 0.125s ease-in-out;
+}

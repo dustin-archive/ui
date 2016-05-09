@@ -1,12 +1,6 @@
 .album {
+  padding: 100% 0 0;
   background-color: rgba($black, 0.5);
-
-  &::before {
-    display: block;
-    width: 100%;
-    padding: 100% 0 0;
-    content: '';
-  }
 }
 
 %album-position {

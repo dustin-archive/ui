@@ -15,6 +15,7 @@
     "tests"
   ],
   "dependencies": {
-    "color-sass": "^1.0.1"
+    "color-sass": "^1.0.1",
+    "pilot-reset": "^1.0.0-alpha2"
   }
 }

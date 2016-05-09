@@ -30,9 +30,9 @@ body {
 }
 
 .side {
+  flex: 1;
   display: flex;
   flex-direction: column;
-  flex: 1;
   min-width: $bar-min-width;
   max-width: calc(50vh - #{$nav-width});
   // position: absolute;
@@ -50,9 +50,9 @@ body {
 }
 
 .center {
+  flex: 3;
   display: flex;
   flex-direction: column;
-  flex: 3;
 }
 
 .control {

@@ -3,3 +3,8 @@ $bar-min-width: 10em !default;
 
 // $bar-max-width: 50vh !default;
 // $album-max-height: 20vw !default;
+
+$blue: mix(#06f, #09f);
+$navy: mix($blue, $black);
+
+$orange: mix(#f60, #f90);

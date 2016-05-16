@@ -1,36 +1,42 @@
 'use strict'
 
-// node modules
-var gulp = require('gulp')
+// Node Modules
+var gulp       = require('gulp')
+var browserify = require('browserify')
+var source     = require('vinyl-source-stream')
 
-// gulp plugins
+// Gulp Plugins
 var sass = require('gulp-sass')
 var jade = require('gulp-jade')
 
-// source directories
-var open_sass = 'scss/**/*.scss'
-var open_jade = '*.jade'
-
-// destination directories
-var save_css = 'css'
-var save_html = ''
-
-// gulp tasks
+// Sass
 gulp.task('sass', function () {
-  gulp.src(open_sass)
-    .pipe(sass({ outputStyle: 'compressed' }).on('error', sass.logError))
-    .pipe(gulp.dest(save_css))
+  gulp.src('scss/**/*.scss')
+    .pipe(sass().on('error', sass.logError))
+    .pipe(gulp.dest('css'))
 })
 
+// Jade
 gulp.task('jade', function () {
-  gulp.src(open_jade)
-    .pipe(jade())
-    .pipe(gulp.dest(save_html))
+  gulp.src('*.jade')
+    .pipe(jade({ pretty: true }))
+    .pipe(gulp.dest(''))
 })
 
-gulp.task('build', ['sass', 'jade'])
+// Browserify
+gulp.task('browserify', function() {
+  browserify('./index.js').bundle()
+    .pipe(source('index.js'))
+    .pipe(gulp.dest(''))
+})
 
+// Build
+gulp.task('build', ['sass', 'jade'])
+// gulp.task('build', ['sass', 'jade', 'browserify'])
+
+// Watch
 gulp.task('watch', function () {
-  gulp.watch(open_sass, ['build'])
-  gulp.watch(open_jade, ['build'])
+  gulp.watch('scss/**/*.scss', ['build'])
+  gulp.watch('index.jade',     ['build'])
+  // gulp.watch('index.js',       ['build'])
 })

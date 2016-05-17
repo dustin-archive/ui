@@ -31,8 +31,8 @@
         // box-shadow: inset 0 0 em(8) 0 #06f;
 
         > .chat-span {
-          padding: em(1 0, 14);
           font-size: em(14);
+          line-height: un(16, 14);
         }
 
         &:first-child { border-radius: em(16 16 16 4); }

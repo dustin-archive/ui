@@ -1,5 +1,50 @@
 .chat {
   flex: 1;
+
+  > .chat-message {
+    display: flex;
+    padding: em(8);
+
+    > .chat-avatar {
+      width: 2em;
+      height: 2em;
+      margin: em(8);
+      border-radius: 50%;
+      background: $black;
+    }
+
+    > .chat-group {
+      margin: em(8);
+
+      > .chat-text {
+        min-height:    em(32);
+        padding:       em(8 12);
+        border-radius: em(4 16 16 4);
+        background: $orange;
+
+        // text-shadow: 0 em(2) em(2) #f60;
+        // background: linear-gradient(#f90, #f60);
+        // box-shadow: inset 0 0 em(8) 0 #f60;
+
+        // text-shadow: 0 em(2) em(2) #06f;
+        // background: linear-gradient(#09f, #06f);
+        // box-shadow: inset 0 0 em(8) 0 #06f;
+
+        > .chat-span {
+          padding: em(1 0, 14);
+          font-size: em(14);
+        }
+
+        &:first-child { border-radius: em(16 16 16 4); }
+        &:last-child  { border-radius: em(4 16 16);    }
+        &:only-child  { border-radius: em(16);         }
+
+        + .chat-text {
+          margin: em(4 0 0);
+        }
+      }
+    }
+  }
 }
 
 .message {

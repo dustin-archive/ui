@@ -15,5 +15,8 @@
   "dependencies": {
     "color-sass": "^1.0.1",
     "pilot-reset": "^1.0.0-alpha2"
+  },
+  "devDependencies": {
+    "mint-sass": "^1.1.0"
   }
 }

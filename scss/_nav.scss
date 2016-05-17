@@ -1,18 +1,68 @@
+// .text {
+//   font-size: 0.875em;
+// }
+
+
+.bar {
+  display: flex;
+  height: $nav-width;
+  background: black;
+
+  > .bar-left {
+    flex: 1;
+    display: flex;
+  }
+
+  > .bar-center {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+  }
+
+  > .bar-right {
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
+  }
+}
+
+
+
+.item {
+  width: $nav-width;
+  height: $nav-width;
+  background: $orange;
+
+  background: linear-gradient(#f90, #f60);
+  box-shadow: inset 0 0 em(8) 0 #f60;
+}
+
+
+
 .nav {
   @extend %transition;
   flex: 0;
-  min-width: 3em;
-  // min-height: 3em;
-  max-width: calc(50vh - #{$nav-width});
   background: $color-nav;
 
-  @media (min-width: 80em) {
-    flex: 1;
+  &.-left, &.-right {
+    min-width: 3em;
+    max-width: 3em;
+
+    @media (min-width: 60em) {
+      flex: 1;
+    }
+
+    @media (min-height: 30em) {
+      max-width: calc(50vh - #{$nav-width});
+    }
   }
 
-  // &.-top    { .nav-border { top:    0; } }
+  &.-top {
+    display: flex;
+    height: 3em;
+  }
+
   &.-right  { .nav-border { right:  0; } }
-  // &.-bottom { .nav-border { bottom: 0; } }
   &.-left   { .nav-border { left:   0; } }
 
   &.-left  { .nav-tip { left:  calc(100% + 1em); } }
@@ -23,7 +73,8 @@
 }
 
 .nav-item {
-  padding: 1em 0 1em 3em;
+  // padding: 1em 1em 1em 3em;
+  padding: 1em;
   cursor: pointer;
 
   &:hover,
@@ -41,9 +92,13 @@
 .nav-border {
   @extend %transition;
   position: absolute;
-  top: 0; bottom: 0;
+  top: 0;
+  bottom: 0;
   width: 0;
   background: $orange;
+
+  background: linear-gradient(#f90, #f60);
+  box-shadow: inset 0 0 em(8) 0 #f60;
 }
 
 .nav-icon {
@@ -52,7 +107,7 @@
   left: 0.5em;
   width: 2em;
   height: 2em;
-  background-image: url('../logo-beta.svg');
+  // background-image: url('../icons/cog.png');
   // background-color: blue;
   // background-size: calc(100% - #{$nav-width / 2});
 }
@@ -62,7 +117,7 @@
   @extend %transition;
   opacity: 0;
 
-  @media (min-width: 80em) {
+  @media (min-width: 60em) {
     opacity: 1;
   }
 }
@@ -71,16 +126,16 @@
   @extend %transition;
   position: absolute;
   top: 0.5em;
-  line-height: 1em;
   padding: 0.5em;
+  line-height: 1em;
   background: $orange;
-  z-index: 1;
   opacity: 0;
+  z-index: 1;
 
   &::before {
+    display: block;
     position: absolute;
     top: 0.625em;
-    display: block;
     width: 0.75em;
     height: 0.75em;
     transform: rotate(45deg);

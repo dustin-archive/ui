@@ -1,11 +1,9 @@
 @import 'bower_components/color-sass/scss/main';
-
 @import 'bower_components/pilot-reset/scss/main';
 
 body {
   color: $white;
-  font: 1em/1 sans-serif;
-  font-family: 'HelveticaNeue-CondensedBold';
+  // font-family: 'HelveticaNeue-CondensedBold';
 }
 
 @import 'variables';

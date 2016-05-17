@@ -4,7 +4,7 @@
   min-width: 3em;
   // min-height: 3em;
   max-width: calc(50vh - #{$nav-width});
-  background: rgba($black, 0.6);
+  background: $color-nav;
 
   @media (min-width: 80em) {
     flex: 1;
